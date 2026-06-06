@@ -1,106 +1,73 @@
-Bitácora de uso de IA
-
-Materia:Estructura y Programación de Computadoras. 2026-2
-Equipo: 
-
-
-1. Herramienta de IA utilizada
-
-Herramienta: asistente de IA basado en un modelo de lenguaje (Claude de Anthropic).
-Uso: generación de una primera versión del código del proyecto a partir de la 
-especificación de la práctica, y apoyo para explicar decisiones de codificación 
-(opcodes, ModRM/SIB, formato objeto, relocaciones).
-
----
-
-## 2. Prompts utilizados (resumen)
-
-Se trabajó principalmente con un prompt extenso que pedía construir el proyecto
-completo a partir del documento de la práctica. Las ideas centrales de los
-prompts fueron:
-
-1. "Genera un ensamblador de IA-32 en C, con analizador léxico y sintáctico
-   **manuales** (sin lex/yacc), que soporte el subconjunto de instrucciones,
-   registros y modos de direccionamiento del documento."
-2. "Implementa **dos versiones**: una de una pasada (con *fixups* para
-   referencias adelantadas) y otra de dos pasadas (tabla de símbolos primero)."
-3. "Define un **formato de archivo objeto** con tablas de símbolos, secciones y
-   relocaciones, y genera tablas `.txt` legibles."
-4. "Implementa un **mini enlazador** que combine varios módulos, resuelva
-   `extern`/`global` y aplique relocaciones `ABS32`/`REL32`."
-5. "Explica las decisiones de codificación (por qué cada opcode, cómo se arma
-   ModRM y SIB)."
-
-> **[EJEMPLO — adaptar]** Si usaron prompts adicionales (por ejemplo, para
-> corregir un error concreto o para entender una parte), agréguenlos aquí
-> textualmente.
-
----
-
-## 3. Qué se generó con apoyo de IA
-
-- Estructura inicial del repositorio y `Makefile`.
-- Primera versión de todos los módulos en C (`lexer`, `parser`, `symtab`,
-  `encoder`, `objfile`, `asmcore`) y de los tres `main`
-  (`assembler1`, `assembler2`, `minilinker`).
-- Archivos de ejemplo y casos de prueba iniciales.
-- Borrador de esta documentación.
-
----
-
-## 4. Modificaciones y revisión del equipo
-
-> **[EJEMPLO — adaptar]** Documenten aquí lo que realmente hicieron sobre el
-> código generado. Algunos ejemplos del tipo de entrada que se espera:
-
-- **[EJEMPLO]** Revisamos `parse_mem` en `parser.c` para entender cómo se
-  distingue base de índice, y agregamos comentarios propios / renombramos
-  variables para que nos quedara claro.
-- **[EJEMPLO]** Añadimos el caso de prueba `tests/test_xxx.asm` para verificar
-  el comportamiento de `____`.
-- **[EJEMPLO]** Cambiamos `TEXT_BASE` en `minilinker.c` de `0x00000000` a
-  `0x____` para ver cómo afectaba a las direcciones del mapa.
-
-Si **no** modificaron una parte, también es válido declararlo: por ejemplo,
-"el módulo `util.c` se usó tal cual se generó".
-
----
-
-## 5. Errores encontrados y cómo se resolvieron
-
-> **[EJEMPLO — adaptar]** Esta sección debe reflejar errores **reales** que
-> hayan visto al compilar/ejecutar/probar. Ejemplos del formato esperado:
-
-- **[EJEMPLO]** Al compilar por primera vez aparecieron advertencias por
-  faltar `#include <stdlib.h>` en algunos archivos; se agregó el include y
-  desaparecieron.
-- **[EJEMPLO]** Al ensamblar `____.asm` el resultado no era el esperado en
-  `____`; revisamos la tabla `____.txt`, identificamos que `____` y lo
-  corregimos / lo entendimos así.
-- **[EJEMPLO]** Verificamos a mano la codificación de `mov ebx, eax` (`8B D8`)
-  para confirmar que el byte ModRM era correcto.
-
-Si durante su revisión **no** encontraron errores en alguna parte, decláralo
-con honestidad (p. ej. "los casos de prueba pasaron sin cambios").
-
----
-
-## 6. Aprendizajes
-
-> **[EJEMPLO — adaptar]** Una o dos frases por integrante sobre qué entendieron
-> mejor gracias al proyecto (por ejemplo, cómo funciona ModRM/SIB, por qué hace
-> falta una segunda pasada, qué es una relocación, etc.).
-
----
-
-## 7. Declaración de integridad
-
-El equipo declara que:
-
-- el uso de IA se limitó a lo descrito en este documento;
-- se revisó y comprendió el código entregado;
-- las pruebas se ejecutaron y los resultados reportados son reales;
-- cualquier afirmación de esta bitácora que no corresponda a lo realizado fue
-  corregida antes de la entrega.
+Bitacora de uso de IA.
+1. Qué herramientas de IA utilizamos
+Se utilizó Claude, de Anthropic, mediante su interfaz web claude.ai, como herramienta de apoyo para la organización del proyecto, generación de una base inicial de código, aclaración de dudas técnicas y redacción de documentación.
+No se utilizó ninguna otra herramienta de IA.
 
 
+3. Qué prompts utilizamos
+Se utilizaron indicaciones generales y consultas específicas relacionadas con los requisitos de la práctica. Las peticiones se enfocaron en comprender la estructura del ensamblador, organizar los módulos del proyecto y revisar aspectos técnicos de la implementación.
+Algunos de los temas consultados fueron:
+Estructura de un ensamblador IA-32 en C sin utilizar lex/yacc ni flex/bison.
+Organización de una versión de una pasada y otra de dos pasadas.
+Manejo de etiquetas, referencias adelantadas, símbolos externos y relocaciones.
+Representación de instrucciones, registros y modos de direccionamiento.
+Codificación de instrucciones usando ModRM y SIB.
+Diseño de casos de prueba mínimos para validar el funcionamiento.
+Documentación del formato de archivo objeto y del proceso de enlace.
+Estas consultas se usaron como apoyo para orientar el desarrollo. El equipo revisó, corrigió, probó y ajustó manualmente las partes principales del proyecto.
+
+
+3. Qué código fue generado automáticamente
+
+La IA se utilizó para generar una base inicial del proyecto, incluyendo algunos archivos fuente, cabeceras, ejemplos, scripts, casos de prueba y borradores de documentación. Estos archivos no se entregaron sin revisión, ya que posteriormente fueron analizados, corregidos y validados por el equipo.
+
+Entre los elementos generados como base inicial estuvieron:
+
+Cabeceras en include/:
+types.h, util.h, lexer.h, symtab.h, parser.h, encoder.h, objfile.h, asmcore.h.
+
+Archivos fuente en src/:
+types.c, util.c, lexer.c, symtab.c, parser.c, encoder.c, objfile.c, asmcore.c, assembler1.c, assembler2.c, minilinker.c.
+
+Archivos de soporte:
+Makefile, README.md, .gitignore.
+
+Ejemplos en examples/:
+test1.asm, mod1.asm, mod2.asm.
+
+Casos de prueba en tests/:
+test_mov_imm.asm, test_jumps.asm, test_forward.asm, test_extern.asm, test_call.asm, test_reloc.asm, test_sib.asm.
+
+Scripts en scripts/:
+build.sh, run_tests.sh, clean.sh.
+
+Documentación en docs/:
+formato_objeto.md, manual_usuario.md, reporte_tecnico.md, además de un borrador inicial de esta bitácora.
+
+
+
+4. Qué modificaciones realizamos manualmente
+
+Sofía: Revisó lexer.c y parser.c. Verificó la tokenización carácter por carácter, la distinción entre registros e identificadores y el parseo de operandos de memoria con base, índice, escala y desplazamiento. También confirmó que las etiquetas requieren : y que los comentarios con ; se manejan correctamente.
+Lizeth: Revisó asmcore.c, assembler1.c y assembler2.c. Trazó el flujo de assemble_stream y verificó cómo define_labels controla la diferencia entre la versión de una pasada y la de dos pasadas. También probó la detección de redefinición de etiquetas y confirmó que se reporta error a stderr con código de salida 1.
+Ángel: Revisó encoder.c. Verificó manualmente la codificación de instrucciones contra la referencia Intel, por ejemplo mov ebx, eax → 8B D8 y mov eax, [ebx+ecx*4+32] → 8B 44 8B 20. También comprobó los modos de direccionamiento usados en tests/test_sib.asm.
+Lair: Revisó objfile.c y minilinker.c. Trazó el enlace de mod1.o + mod2.o, verificando las relocaciones y comparando la salida generada con build/program.hex.
+
+Los módulos util.c y types.c se usaron prácticamente sin cambios, ya que solo contenían funciones auxiliares y definiciones generales.
+
+
+
+5. Qué errores encontramos
+Durante la compilación y las pruebas se encontraron los siguientes errores:
+
+Faltaban includes:
+gcc reportó advertencias de implicit declaration of function 'free' en symtab.c, asmcore.c, assembler1.c y assembler2.c.
+Se corrigió agregando:
+
+#include <stdlib.h>
+
+Indentación engañosa:
+En encoder.c, algunas líneas relacionadas con ret y nop tenían if/else y return en la misma línea, lo que generaba la advertencia -Wmisleading-indentation.
+Se corrigió separando las instrucciones en distintas líneas para hacer más claro el flujo.
+Colisión de nombres en una macro: En minilinker.c, la macro RESOLVE tenía un parámetro llamado name, que entraba en conflicto con el miembro .name de la estructura Symbol.   Esto provocaba errores de compilación. Se corrigió reemplazando la macro por una función llamada resolve_symbol, usando el parámetro want.
+Después de estas correcciones, el proyecto compiló sin advertencias.
