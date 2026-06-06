@@ -1,0 +1,17 @@
+# Ejecutables
+/assembler1
+/assembler2
+/minilinker
+
+# Objetos y salidas generadas
+build/*.o
+build/*.txt
+build/*.hex
+*.o
+
+# Archivos temporales de editores
+*~
+*.swp
+.vscode/
+.idea/
+.DS_Store
