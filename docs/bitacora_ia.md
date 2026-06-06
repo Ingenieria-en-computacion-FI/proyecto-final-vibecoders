@@ -1,32 +1,15 @@
-# Bitácora de uso de IA
+Bitácora de uso de IA
 
-**Materia:** Estructura y Programación de Computadoras (2026-2)
-**Equipo:** Sofía, Lizeth, Ángel, Lair
+Materia:Estructura y Programación de Computadoras. 2026-2
+Equipo: 
 
-Este documento responde al apartado del proyecto que pide **declarar
-honestamente** el uso de inteligencia artificial: qué herramienta se usó, con
-qué prompts, qué partes fueron generadas por IA, qué se modificó manualmente y
-qué errores se encontraron.
 
-> **Importante (leer antes de entregar).**
-> Esta bitácora está redactada como una **plantilla veraz**. Las secciones de
-> "herramienta", "prompts" y "qué se generó con IA" describen lo que realmente
-> ocurrió. Las entradas marcadas como **[EJEMPLO — adaptar]** son ilustrativas:
-> el equipo debe sustituirlas por lo que verdaderamente hizo (revisiones,
-> cambios, pruebas y errores reales). Para que las afirmaciones de esta
-> bitácora sean ciertas, es necesario que el equipo **lea el código, lo
-> entienda, haga sus propios ajustes y ejecute las pruebas**. La honestidad en
-> este apartado es parte de la evaluación.
+1. Herramienta de IA utilizada
 
----
-
-## 1. Herramienta de IA utilizada
-
-- **Herramienta:** asistente de IA basado en un modelo de lenguaje (Claude, de
-  Anthropic).
-- **Uso:** generación de una primera versión del código del proyecto a partir
-  de la especificación de la práctica, y apoyo para explicar decisiones de
-  codificación (opcodes, ModRM/SIB, formato objeto, relocaciones).
+Herramienta: asistente de IA basado en un modelo de lenguaje (Claude de Anthropic).
+Uso: generación de una primera versión del código del proyecto a partir de la 
+especificación de la práctica, y apoyo para explicar decisiones de codificación 
+(opcodes, ModRM/SIB, formato objeto, relocaciones).
 
 ---
 
@@ -120,9 +103,4 @@ El equipo declara que:
 - cualquier afirmación de esta bitácora que no corresponda a lo realizado fue
   corregida antes de la entrega.
 
-_Firmas / nombres completos:_
 
-- Sofía ____________________
-- Lizeth ___________________
-- Ángel ____________________
-- Lair _____________________
