@@ -1,10 +1,10 @@
 # **Bitacora de uso de IA.**
 ### Herramientas de IA utilizadas
-##### Utilizamos Claude, de Anthropic, mediante su interfaz web claude.ai, como herramienta de apoyo para la organización del proyecto, generación de una base inicial de código, aclaración de dudas técnicas y redacción de documentación.
+#### Utilizamos Claude, de Anthropic, mediante su interfaz web claude.ai, como herramienta de apoyo para la organización del proyecto, generación de una base inicial de código, aclaración de dudas técnicas y redacción de documentación.
 
-##### También utilizamos Gemini, de Google. Esta IA fue utilizada mayoritariamente en problemas de sintaxis.
+#### También utilizamos Gemini, de Google. Esta IA fue utilizada mayoritariamente en problemas de sintaxis.
 
-##### No se utilizó ninguna otra herramienta de IA.
+#### No se utilizó ninguna otra herramienta de IA.
 
 ### Qué prompts utilizamos
 #### Las peticiones centrales fueron:
@@ -15,11 +15,11 @@
 
 
 ### Código generado automáticamente
-La IA se utilizó para generar una base inicial del código del proyecto, que posteriormente fue revisada, corregida y validada por el equipo. Los archivos generados fueron:
-Cabeceras en include/:
-types.h, util.h, lexer.h, symtab.h, parser.h, encoder.h, objfile.h, asmcore.h.
-Archivos fuente en src/:
-types.c, util.c, lexer.c, symtab.c, parser.c, encoder.c, objfile.c, asmcore.c, assembler1.c, assembler2.c, minilinker.c.
+#### La IA se utilizó para generar una base inicial del código del proyecto, que posteriormente fue revisada, corregida y validada por el equipo. Los archivos generados fueron:
+#### *Cabeceras en include/:*
+##### `types.h, util.h, lexer.h, symtab.h, parser.h, encoder.h, objfile.h, asmcore.h.`
+#### *Archivos fuente en src/:*
+##### `types.c, util.c, lexer.c, symtab.c, parser.c, encoder.c, objfile.c, asmcore.c, assembler1.c, assembler2.c, minilinker.c.`
 
 ### Modificaciones realizadas manualmente
 
