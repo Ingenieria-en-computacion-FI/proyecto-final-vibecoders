@@ -1,5 +1,4 @@
 ; ============================================================
-; examples/mod2.asm  -  Modulo auxiliar (para el linker)
 ; Define 'helper' (global) y referencia 'main' (extern).
 ; ============================================================
 
