@@ -1,7 +1,7 @@
 /* ============================================================================
- * lexer.h  -  Analizador lexico MANUAL (sin lex/flex)
+ * lexer.h 
  *
- * Responsabilidad (Integrante 1):
+ * Responsabilidad (Sofia):
  *   - Leer el codigo fuente caracter por caracter y producir tokens.
  *   - Reconocer registros, numeros, identificadores, simbolos de puntuacion.
  *   - Ignorar comentarios (';' hasta fin de linea) y espacios.
@@ -19,7 +19,7 @@ typedef enum {
     T_NEWLINE,     /* fin de linea (separador de sentencias)           */
     T_IDENT,       /* mnemonico, etiqueta o directiva                  */
     T_REGISTER,    /* eax, ebx, ... (reconocido por el lexer)          */
-    T_NUMBER,      /* literal numerico (decimal o 0xHEX)               */
+    T_NUMBER,      /* decimal o 0xHEX              */
     T_STRING,      /* cadena entre comillas dobles (para db)           */
     T_COMMA,       /* ,                                                */
     T_LBRACKET,    /* [                                                */
