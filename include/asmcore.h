@@ -1,17 +1,13 @@
 /* ============================================================================
  * asmcore.h  -  Nucleo comun del ensamblador (backend compartido)
  *
- * Responsabilidad (Integrante 3):
+ * Responsabilidad (Lizeth):
  *   Logica compartida por el ensamblador de 1 pasada y el de 2 pasadas:
  *     - emitir una sentencia (directiva o instruccion) dentro de un modulo,
  *     - registrar referencias pendientes (fixups) a simbolos,
  *     - resolver esas referencias al final: parchar valores locales/constantes
  *       o generar relocaciones para el linker.
  *
- *   Tener este nucleo en un solo lugar garantiza que ambos ensambladores
- *   produzcan exactamente el mismo diseño de secciones (mismos offsets), lo
- *   que es indispensable para que la tabla de tamaños de la 1a pasada coincida
- *   con el codigo de la 2a pasada.
  * ==========================================================================*/
 #ifndef IA32_ASMCORE_H
 #define IA32_ASMCORE_H
@@ -22,11 +18,11 @@
 #include "symtab.h"
 #include "objfile.h"
 
-/* Referencia pendiente (fixup) detectada al emitir codigo. */
+
 typedef struct {
     SectionId section;       /* seccion donde vive el campo de 32 bits        */
     long      offset;        /* offset del campo dentro de la seccion         */
-    RelocKind kind;          /* ABS32 / REL32                                 */
+    RelocKind kind;        
     char      sym[MAXNAME];
     long      addend;
     int       line;          /* linea fuente (para la tabla de referencias)   */
@@ -87,4 +83,4 @@ int assemble_stream(const char *src, const char *filename,
  * ------------------------------------------------------------------------- */
 int resolve_refs(ObjModule *m, SymTab *st, RefList *refs);
 
-#endif /* IA32_ASMCORE_H */
+#endif 
