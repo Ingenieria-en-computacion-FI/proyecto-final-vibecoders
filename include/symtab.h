@@ -1,6 +1,6 @@
 /* ============================================================================
- * symtab.h  -  Tabla de simbolos
- *
+ * Lizeth
+ * 
  * Guarda etiquetas (direcciones), constantes EQU, simbolos GLOBAL y EXTERN.
  * Es usada por ambos ensambladores y, en su forma serializada, por el linker.
  * ==========================================================================*/
