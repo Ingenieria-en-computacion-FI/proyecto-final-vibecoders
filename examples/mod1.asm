@@ -1,5 +1,5 @@
 ; ============================================================
-; examples/mod1.asm  -  Modulo principal (para el linker)
+; Modulo principal (para el linker)
 ; Define 'main' (global) y usa 'helper' (extern, en mod2).
 ; ============================================================
 
