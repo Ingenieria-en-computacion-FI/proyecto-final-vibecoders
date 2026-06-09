@@ -1,12 +1,7 @@
 /* ============================================================================
  * encoder.h  -  Generador de codigo maquina IA-32 (subconjunto)
  *
- * Responsabilidad (Integrante 4):
- *   - Traducir una instruccion (Statement ST_INSTR) a bytes IA-32:
- *       [opcode] [ModRM] [SIB] [desplazamiento] [inmediato]
- *   - Construir ModRM y SIB para los modos de direccionamiento soportados.
- *
- * NOTA DE DISEÑO:
+ * Responsabilidad (Angel):
  *   El encoder es puramente sintactico: NO resuelve simbolos. Cuando un campo
  *   de 32 bits corresponde a un simbolo, devuelve una referencia (EncRef) que
  *   el backend del ensamblador resolvera (constante, rel local) o convertira
