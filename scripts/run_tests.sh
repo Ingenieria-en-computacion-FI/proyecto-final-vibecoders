@@ -57,12 +57,19 @@ run "$LINENO" "assembler2  mod1" ./assembler2 examples/mod1.asm "$BUILD/mod1"
 run "$LINENO" "assembler2  mod2" ./assembler2 examples/mod2.asm "$BUILD/mod2"
 run "$LINENO" "minilinker  mod1+mod2" ./minilinker "$BUILD/mod1.o" "$BUILD/mod2.o" "$BUILD/program.hex"
 
-echo
+# Define aquí exactamente cuáles pruebas quieres correr separados por un espacio
 echo "============================================================"
-echo " Programa de ejemplo general (test1)"
+echo "Programas de ejemplo general"
 echo "============================================================"
-run "$LINENO" "assembler1  test1" ./assembler1 examples/test1.asm "$BUILD/test1_a1"
-run "$LINENO" "assembler2  test1" ./assembler2 examples/test1.asm "$BUILD/test1_a2"
+
+for test in test1 test2; do
+    echo "============================================================"
+    echo " Procesando: $test"
+    echo "============================================================"
+
+    run "$LINENO" "assembler1  $test" ./assembler1 "examples/${test}.asm" "$BUILD/${test}_a1"
+    run "$LINENO" "assembler2  $test" ./assembler2 "examples/${test}.asm" "$BUILD/${test}_a2"
+done
 
 # Limpiamos el archivo temporal
 rm -f "$TMP_ERR"
