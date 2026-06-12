@@ -72,11 +72,11 @@ ia32-assembler-linker/
 
 ## Documentación
 
-- [`docs/manual_usuario.md`](docs/manual_usuario.md) — cómo compilar y usar.
-- [`docs/formato_objeto.md`](docs/formato_objeto.md) — formato `.o` y decisiones
+- [`Manual de usuario`](docs/manual_usuario.pdf) — Cómo compilar y usar.
+- [`Formato de Objeto`](docs/formato_objeto.md) — Formato `.o` y decisiones
   de codificación (opcodes, ModRM, SIB).
-- [`docs/reporte_tecnico.md`](docs/reporte_tecnico.md) — reporte técnico.
-- [`docs/bitacora_ia.md`](docs/bitacora_ia.md) — bitácora de uso de IA.
+- [`Reporte técnico`](docs/reporte_tecnico.md) — Reporte técnico.
+- [`Bitácora IA`](docs/bitacora_ia.md) — Bitácora de uso de IA.
 
 ---
 
