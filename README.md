@@ -83,8 +83,12 @@ ia32-assembler-linker/
 ## Equipo
 
 > Dávalos Carmona Gael Eduardo
+> 
 > Morales Basilio Alejandra Sofía
+>
 > Reyes García Miguel Ángel
+>
 > Santos Cruz Lair Abraham
+>
 > Torres Rodríguez Lizeth Danae
 
